@@ -1,0 +1,29 @@
+<%= form_for([:api, @artist]) do |f| %>
+  <% if @artist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
+
+      <ul>
+      <% @artist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :spotify_artist_id %><br>
+    <%= f.text_field :spotify_artist_id %>
+  </div>
+  <div class="field">
+    <%= f.label :artist_thumbnail_url %><br>
+    <%= f.text_field :artist_thumbnail_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
