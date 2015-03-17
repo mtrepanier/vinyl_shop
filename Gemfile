@@ -45,6 +45,8 @@ end
 
 gem 'spotify-client'
 
+gem 'bootstrap-sass'
+
 gem 'rails_12factor', group: :production
 
 ruby "2.1.5"
