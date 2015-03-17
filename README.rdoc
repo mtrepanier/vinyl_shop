@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bring a small vinyl shop to the 20th century
 
-Things you may want to cover:
+Important to know:
 
-* Ruby version
+* You can have access to admin via /admin
 
-* System dependencies
+* Frontend use the rest api located at /api
 
-* Configuration
+* After creation of an Artist, we call spotify api to find the artist info
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Using of bootstrap for the frontend
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thing not done, but would have been good to improve
+
+* Better admin
+
+* Login and security for the admin and api
+
