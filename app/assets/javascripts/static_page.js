@@ -1,4 +1,4 @@
-$(function() {
+var homepageReady = function(){
 	var homepage = $('#homepage');
 	
 	if(homepage.length > 0){
@@ -18,4 +18,7 @@ $(function() {
 	    	ko.applyBindings(vm);
 	    });
 	}
-});
+};
+
+$(document).ready(homepageReady)
+$(document).on('page:load', homepageReady)
