@@ -1,19 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Artist : <%= @artist.name %></div>
+	<div class="panel-body">
+		<% if notice %>
+			<div class="panel-body">
+				<p id="notice"><%= notice %></p>
+			</div>
+		<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+		<p>
+			<strong>Name:</strong>
+			<%= @artist.name %>
+		</p>
 
-<p>
-  <strong>Spotify artist:</strong>
-  <%= @artist.spotify_artist_id %>
-</p>
+		<p>
+			<strong>Spotify artist:</strong>
+			<%= @artist.spotify_artist_id %>
+		</p>
 
-<p>
-  <strong>Artist thumbnail url:</strong>
-  <%= @artist.artist_thumbnail_url %>
-</p>
+		<p>
+			<strong>Artist thumbnail url:</strong>
+			<%= @artist.artist_thumbnail_url %>
+		</p>
+		<p>
+		  <strong>Concerts:</strong><br/>
+		  <%= raw @artist.concerts.collect{|c| c.show_date.strftime("On %m/%d/%Y at %I:%M%p")}.join("<br/>") %>
+		</p>
+	</div>
+	<div class="panel-footer">
+		<%= link_to 'Edit', edit_api_artist_path(@artist) %> |
+		<%= link_to 'Back', api_artists_path %>
+	</div>
+</div>
 
-<%= link_to 'Edit', edit_api_artist_path(@artist) %> |
-<%= link_to 'Back', api_artists_path %>
+

@@ -1,19 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Concert : <%= @concert.show_date.strftime("On %m/%d/%Y at %I:%M%p") %></div>
+	<div class="panel-body">
+		<% if notice %>
+			<div class="panel-body">
+				<p id="notice"><%= notice %></p>
+			</div>
+		<% end %>
 
-<p>
-  <strong>Show date:</strong>
-  <%= @concert.show_date %>
-</p>
+		<p>
+		  <strong>Show date:</strong>
+		  <%= @concert.show_date %>
+		</p>
 
-<p>
-  <strong>Venue:</strong>
-  <%= @concert.venue_id %>
-</p>
+		<p>
+		  <strong>Venue:</strong>
+		  <%= @concert.venue.name %>
+		</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @concert.price %>
-</p>
+		<p>
+		  <strong>Price:</strong>
+		  <%= number_to_currency @concert.price %>
+		</p>
 
-<%= link_to 'Edit', edit_api_concert_path(@concert) %> |
-<%= link_to 'Back', api_concerts_path %>
+		<p>
+		  <strong>Artists:</strong>
+		  <%= @concert.artists.collect{|a| a.name}.join(", ") %>
+		</p>
+	</div>
+	<div class="panel-footer">
+		<%= link_to 'Edit', edit_api_concert_path(@concert) %> |
+		<%= link_to 'Back', api_concerts_path %>
+	</div>
+</div>
+
+
+

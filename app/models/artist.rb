@@ -26,7 +26,6 @@ class Artist < ActiveRecord::Base
 		def format_name_for_spotify_search
 			formated_name = self.name.downcase
 			formated_name = formated_name.gsub " & ", " "
-			formated_name = formated_name.gsub " & ", " "
 			formated_name = formated_name.gsub " (live)", ""
 		end
 end

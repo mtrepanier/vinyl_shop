@@ -1,6 +1,12 @@
-<h1>Editing Venue</h1>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Editing Venue</div>
 
-<%= render 'form' %>
+	<div class="panel-body">
+		<%= render 'form' %>
+	</div>
+	<div class="panel-footer">
+		<%= link_to 'Show', [:api,@venue] %> | <%= link_to 'Back', api_venues_path %>
+	</div>
+</div>
 
-<%= link_to 'Show', [:api, @venue] %> |
-<%= link_to 'Back', api_venues_path %>

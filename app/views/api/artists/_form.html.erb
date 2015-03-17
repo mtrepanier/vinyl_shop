@@ -4,9 +4,9 @@
       <h2><%= pluralize(@artist.errors.count, "error") %> prohibited this artist from being saved:</h2>
 
       <ul>
-      <% @artist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @artist.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>

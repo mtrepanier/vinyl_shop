@@ -1,5 +1,9 @@
-<h1>New Venue</h1>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">New Venue</div>
+	<div class="panel-body">
+		<%= render 'form' %>
+	</div>
+	<div class="panel-footer"><%= link_to 'Back', api_venues_path %></div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', api_venues_path %>

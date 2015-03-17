@@ -1,6 +1,12 @@
-<h1>Editing Artist</h1>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Editing Artist</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', [:api, @artist] %> |
-<%= link_to 'Back', api_artists_path %>
+	<div class="panel-body">
+		<%= render 'form' %>
+	</div>
+	<div class="panel-footer">
+		<%= link_to 'Show', [:api, @artist] %> |
+		<%= link_to 'Back', api_artists_path %>
+	</div>
+</div>

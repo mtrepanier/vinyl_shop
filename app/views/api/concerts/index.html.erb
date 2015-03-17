@@ -1,31 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Listing Concerts</div>
+  <% if notice %>
+    <div class="panel-body">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
 
-<h1>Listing Concerts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Show date</th>
-      <th>Venue</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @concerts.each do |concert| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= concert.show_date %></td>
-        <td><%= concert.venue_id %></td>
-        <td><%= concert.price %></td>
-        <td><%= link_to 'Show', [:api,concert] %></td>
-        <td><%= link_to 'Edit', edit_api_concert_path(concert) %></td>
-        <td><%= link_to 'Destroy', [:api,concert], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Show date</th>
+        <th>Venue</th>
+        <th>Price</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @concerts.each do |concert| %>
+        <tr>
+          <td><%= concert.show_date.strftime("On %m/%d/%Y at %I:%M%p") %></td>
+          <td><%= concert.venue.name %></td>
+          <td><%= number_to_currency concert.price %></td>
+          <td><%= link_to 'Show', [:api,concert] %></td>
+          <td><%= link_to 'Edit', edit_api_concert_path(concert) %></td>
+          <td><%= link_to 'Destroy', [:api,concert], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Concert', new_api_concert_path %>
+  <div class="panel-footer"><%= link_to 'New Concert', new_api_concert_path %></div>
+  
+</div>
+

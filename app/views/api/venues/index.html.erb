@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Listing Venues</div>
+  <% if notice %>
+    <div class="panel-body">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <% end %>
 
-<h1>Listing Venues</h1>
-
-<table>
-  <thead>
+  <table class="table">
+    <thead>
     <tr>
       <th>Name</th>
       <th colspan="3"></th>
@@ -22,6 +27,8 @@
   </tbody>
 </table>
 
-<br>
+  <div class="panel-footer"><%= link_to 'New Venue', new_api_venue_path %></div>
+  
+</div>
 
-<%= link_to 'New Venue', new_api_venue_path %>
+
