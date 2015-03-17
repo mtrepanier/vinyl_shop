@@ -1,3 +1,4 @@
+<%= render "shared/admin_nav" %>
 <div class="panel panel-default">
 	<!-- Default panel contents -->
 	<div class="panel-heading">Concert : <%= @concert.show_date.strftime("On %m/%d/%Y at %I:%M%p") %></div>
@@ -10,7 +11,7 @@
 
 		<p>
 		  <strong>Show date:</strong>
-		  <%= @concert.show_date %>
+		  <%= @concert.formated_show_date %>
 		</p>
 
 		<p>
@@ -25,7 +26,7 @@
 
 		<p>
 		  <strong>Artists:</strong>
-		  <%= @concert.artists.collect{|a| a.name}.join(", ") %>
+		  <%= @concert.artists_names %>
 		</p>
 	</div>
 	<div class="panel-footer">

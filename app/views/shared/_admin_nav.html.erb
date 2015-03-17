@@ -1,0 +1,5 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="<%= params[:controller] == 'api/artists' ? "active" : "" %>"><%= link_to "Artists", {controller: "/api/artists", action: "index"} %></li>
+  <li role="presentation" class="<%= params[:controller] == 'api/venues' ? "active" : "" %>"><%= link_to "Venues", {controller: "/api/venues", action: "index"} %></li>
+  <li role="presentation" class="<%= params[:controller] == 'api/concerts' ? "active" : "" %>"><%= link_to "Concerts", {controller: "/api/concerts", action: "index"} %></li>
+</ul>

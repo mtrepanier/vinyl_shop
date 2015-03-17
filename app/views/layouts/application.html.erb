@@ -14,11 +14,11 @@
   <body>
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to "Vinyl shop", {controller: "/homepage", action: "index"}, id: "logo" %>
+        <%= link_to "Vinyl shop", {controller: "/static_page", action: "homepage"}, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home", {controller: "/homepage", action: "index"} %></li>
-            <li><%= link_to "Admin",   '#' %></li>
+            <li><%= link_to "Home", {controller: "/static_page", action: "homepage"} %></li>
+            <li><%= link_to "Admin", {controller: "/static_page", action: "adminpage"} %></li>
           </ul>
         </nav>
       </div>

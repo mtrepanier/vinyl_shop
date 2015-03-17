@@ -1,0 +1,43 @@
+<div id="homepage" data-api="<%=url_for api_concerts_path(format: :json) %>">
+  <table class="table">
+      <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Venue</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody data-bind="foreach: concerts">
+      <tr>
+        <td>
+          <a href="#" data-bind="text: artists_names, click: $parent.toggleArtists, clickBubble: false"></a>
+          <div data-bind="foreach: artists, visible: artists_info_visible">
+            <div class="media">
+              <div class="media-left">
+                <!-- ko if: artist_thumbnail_url -->
+                  <img class="media-object" data-bind="attr: {src: artist_thumbnail_url, alt: name}">
+                <!-- /ko -->
+                <!-- ko ifnot: artist_thumbnail_url -->
+                  <img class="media-object" src="http://placehold.it/640x640&text=vinyl+shop"  data-bind="attr: {alt: name}">
+                <!-- /ko -->
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading" data-bind="text: name"></h4>
+                <!-- ko if: embed_spotify -->
+                <iframe data-bind="attr: {src: embed_spotify}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+                <!-- /ko -->
+              </div>
+            </div>
+          </div>
+        </td>
+        <td data-bind="text: formated_show_date"></td>
+        <td data-bind="text: formated_show_time"></td>
+        <td data-bind="text: venue.name"></td>
+        <td data-bind="text: formated_price"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

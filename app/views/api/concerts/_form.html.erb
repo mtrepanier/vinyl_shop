@@ -28,6 +28,11 @@
     <%= f.collection_select :artist_ids, @artists, :id, :name, {}, {:multiple => true} %>
   </div>
 
+  <div class="field">
+    <%= f.label :is_sold_out %><br>
+    <%= f.check_box :is_sold_out %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,5 +1,6 @@
 class Api::ConcertsController < ApplicationController
   before_action :set_concert, only: [:show, :edit, :update, :destroy]
+  before_action :set_venues_and_artists, only: [:new, :edit, :create, :update]
 
   # GET /api/concerts
   # GET /api/concerts.json
@@ -15,14 +16,10 @@ class Api::ConcertsController < ApplicationController
   # GET /api/concerts/new
   def new
     @concert = Concert.new
-    @artists = Artist.all
-    @venues = Venue.all
   end
 
   # GET /api/concerts/1/edit
   def edit
-    @artists = Artist.all
-    @venues = Venue.all
   end
 
   # POST /api/concerts
@@ -69,6 +66,11 @@ class Api::ConcertsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_concert
       @concert = Concert.find(params[:id])      
+    end
+
+    def set_venues_and_artists
+      @artists = Artist.all
+      @venues = Venue.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,3 +1,4 @@
+<%= render "shared/admin_nav" %>
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Listing Concerts</div>
@@ -20,7 +21,7 @@
     <tbody>
       <% @concerts.each do |concert| %>
         <tr>
-          <td><%= concert.show_date.strftime("On %m/%d/%Y at %I:%M%p") %></td>
+          <td><%= concert.formated_show_date %></td>
           <td><%= concert.venue.name %></td>
           <td><%= number_to_currency concert.price %></td>
           <td><%= link_to 'Show', [:api,concert] %></td>

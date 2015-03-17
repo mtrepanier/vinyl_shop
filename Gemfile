@@ -47,6 +47,8 @@ gem 'spotify-client'
 
 gem 'bootstrap-sass'
 
+gem 'knockoutjs-rails'
+
 gem 'rails_12factor', group: :production
 
 ruby "2.1.5"
