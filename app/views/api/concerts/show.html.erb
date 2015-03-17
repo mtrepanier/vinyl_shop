@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Show date:</strong>
+  <%= @concert.show_date %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @concert.venue_id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @concert.price %>
+</p>
+
+<%= link_to 'Edit', edit_api_concert_path(@concert) %> |
+<%= link_to 'Back', api_concerts_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Concerts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Show date</th>
+      <th>Venue</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @concerts.each do |concert| %>
+      <tr>
+        <td><%= concert.show_date %></td>
+        <td><%= concert.venue_id %></td>
+        <td><%= concert.price %></td>
+        <td><%= link_to 'Show', [:api,concert] %></td>
+        <td><%= link_to 'Edit', edit_api_concert_path(concert) %></td>
+        <td><%= link_to 'Destroy', [:api,concert], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Concert', new_api_concert_path %>

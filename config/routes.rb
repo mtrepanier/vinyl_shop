@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   
 
+  
+
   namespace :api do
     resources :artists
     resources :venues
+    resources :concerts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  show_date: 2015-03-16 23:37:15
+  venue_id: 1
+  price: 9.99
+
+two:
+  show_date: 2015-03-16 23:37:15
+  venue_id: 1
+  price: 9.99
