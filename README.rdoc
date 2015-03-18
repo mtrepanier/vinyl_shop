@@ -12,10 +12,16 @@ Important to know:
 
 * Using of bootstrap for the frontend
 
+* You can refresh from cheapthrills anytime you want, it will update matching concert and remove previous concert only if they we're created from the refresh task
 
-Thing not done, but would have been good to improve
+* Manually created concert aren't deleted from the refresh task
+
+
+Thing to do or to improve
 
 * Better admin
 
 * Login and security for the admin and api
+
+* More unit test
 
