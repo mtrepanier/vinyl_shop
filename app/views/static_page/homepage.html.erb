@@ -2,6 +2,7 @@
   <table class="table">
       <thead>
       <tr>
+        <th>&nbsp;</th>
         <th>Artist</th>
         <th>Date</th>
         <th>Time</th>
@@ -12,6 +13,11 @@
 
     <tbody data-bind="foreach: concerts">
       <tr>
+        <td>
+          <!-- ko if: is_sold_out -->
+          SOLD OUT
+          <!-- /ko -->
+        </td>
         <td>
           <a href="#" data-bind="text: artists_names, click: $parent.toggleArtists, clickBubble: false"></a>
           <div data-bind="foreach: artists, visible: artists_info_visible">

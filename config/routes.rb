@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  
-
-  
 
   namespace :api do
+    get 'maintenance/refresh_from_cheapthrills'
     resources :artists
     resources :venues
     resources :concerts

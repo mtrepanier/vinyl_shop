@@ -19,7 +19,7 @@ class Artist < ActiveRecord::Base
 					end
 				end
 				self.spotify_artist_id = spotify_artist['id'];
-				self.artist_thumbnail_url = spotify_artist['images'][0]['url']
+				self.artist_thumbnail_url = spotify_artist['images'][0]['url'] if spotify_artist['images'].length > 0
 			end
 		end
 

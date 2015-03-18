@@ -49,6 +49,8 @@ gem 'bootstrap-sass'
 
 gem 'knockoutjs-rails'
 
+gem 'nokogiri'
+
 gem 'rails_12factor', group: :production
 
 ruby "2.1.5"

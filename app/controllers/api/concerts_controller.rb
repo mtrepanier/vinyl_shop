@@ -5,7 +5,7 @@ class Api::ConcertsController < ApplicationController
   # GET /api/concerts
   # GET /api/concerts.json
   def index
-    @concerts = Concert.all
+    @concerts = Concert.where("show_date > ?", DateTime.now).order(show_date: :asc)
   end
 
   # GET /api/concerts/1

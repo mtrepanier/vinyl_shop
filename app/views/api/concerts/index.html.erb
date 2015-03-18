@@ -14,6 +14,8 @@
         <th>Show date</th>
         <th>Venue</th>
         <th>Price</th>
+        <th>Sold out</th>
+        <th>Is generated?</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -24,6 +26,8 @@
           <td><%= concert.formated_show_date %></td>
           <td><%= concert.venue.name %></td>
           <td><%= number_to_currency concert.price %></td>
+          <td><%= concert.is_sold_out %></td>
+          <td><%= concert.is_generated %></td>
           <td><%= link_to 'Show', [:api,concert] %></td>
           <td><%= link_to 'Edit', edit_api_concert_path(concert) %></td>
           <td><%= link_to 'Destroy', [:api,concert], method: :delete, data: { confirm: 'Are you sure?' } %></td>

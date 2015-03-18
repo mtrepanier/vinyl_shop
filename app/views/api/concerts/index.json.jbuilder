@@ -1,5 +1,5 @@
 json.array!(@concerts) do |concert|
-  json.extract! concert, :id, :show_date, :formated_show_time, :formated_show_date, :venue, :price, :artists_names
+  json.extract! concert, :id, :show_date, :formated_show_time, :formated_show_date, :venue, :price, :artists_names, :is_sold_out
   json.formated_price number_to_currency concert.price
   json.artists concert.artists do |artist|
   	json.(artist , :id, :name, :spotify_artist_id, :artist_thumbnail_url)

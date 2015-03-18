@@ -172,6 +172,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   knockoutjs-rails
+  nokogiri
   pg
   rails (= 4.2.0)
   rails_12factor
